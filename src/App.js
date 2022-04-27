@@ -6,8 +6,12 @@ import SearchIcon from "./search.svg";
 const API_URL = "http://www.omdbapi.com?apikey=1c2bd3a9";
 
 const App = () => {
-	const [movies, setMovies] = useState([]);
 	const [searchTerm, setSearchTerm] = useState("");
+	const [movies, setMovies] = useState([]);
+
+		useEffect(() => {
+			searchMovies("Mad Max");
+		}, []);
 
 	const searchMovies = async (title) => {
 		const response = await fetch(`${API_URL}&s=${title}`);
@@ -16,10 +20,6 @@ const App = () => {
 		setMovies(data.Search);
 	};
 
-	useEffect(() => {
-		searchMovies("Mad Max");
-	}, []);
-
 	const handleKeyPress = (e) => {
 		if (e.key === "Enter") {
 			searchMovies(searchTerm);
@@ -27,7 +27,7 @@ const App = () => {
 	};
 
 	return (
-		<div className="app" >
+		<div className="app">
 			<h1>MoviePoster</h1>
 
 			<div className="search">
