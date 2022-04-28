@@ -2,4 +2,4 @@
 
 # You can try this App on this link:
 
-[MoviePoster](https://p-attila.github.io/movie/build)
+[MoviePoster](https://p-attila.github.io/Movie-Poster/build)
